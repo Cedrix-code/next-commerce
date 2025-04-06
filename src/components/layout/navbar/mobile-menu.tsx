@@ -13,7 +13,7 @@ export default function MobileMenu({menu}: {menu: Menu[]}) {
     const closeMobileMenu = () => setIsOpen(false);
     return (
         <>
-            <button onClick={openMobileMenu} aria-label="Open mobile menu" className="flex h-11 w-11 items-center rounded:md border border-neutral-200 text-black   transition-colors md:hidden dark:border-neutral-700 dark:text-white">
+            <button onClick={openMobileMenu} aria-label="Open mobile menu" className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white">
                 <Bars3Icon className="h-4" />
             </button>
             <Transition show={isOpen}>
@@ -51,6 +51,7 @@ export default function MobileMenu({menu}: {menu: Menu[]}) {
                                                     prefetch={true}
                                                     onClick={closeMobileMenu}
                                                 >
+                                                    {item.title}
                                                 </Link>
                                             </li>
                                         ))}
