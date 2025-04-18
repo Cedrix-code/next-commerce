@@ -1,16 +1,15 @@
 "use client"
 
 import type React from "react"
-
-import { forwardRef } from "react"
 import { cn } from "@/lib/utils"
 
 export interface LogoIconProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string
   className?: string
+  ref?: React.Ref<SVGSVGElement>
 }
 
-const LogoIcon = forwardRef<SVGSVGElement, LogoIconProps>(({ size, className, ...props }, ref) => {
+function LogoIcon({ size, className, ref, ...props }: LogoIconProps) {
   // Convert pt to px for better web rendering if size is provided
   const width = size ? size : "500pt"
   const height = size ? size : "500pt"
@@ -73,8 +72,6 @@ const LogoIcon = forwardRef<SVGSVGElement, LogoIconProps>(({ size, className, ..
       </g>
     </svg>
   )
-})
-
-LogoIcon.displayName = "LogoIcon"
+}
 
 export default LogoIcon

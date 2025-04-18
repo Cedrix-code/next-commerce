@@ -7,8 +7,6 @@ import LogoSquare from "@/components/logo-square";
 
 export async function Navbar() {
   const menu = await getMenu("next-js-frontend-menu");
-
-  console.log(menu);
   return <nav className="flex items-center justify-between p-4 lg:px-6">
     <div className="block flex-none md:hidden">
       <MobileMenu menu={menu}/>
@@ -17,9 +15,9 @@ export async function Navbar() {
       <div className="flex w-full items-center md:w-1/3">
         <Link href={'/'} prefetch={true} className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6">
           <LogoSquare />
-          <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+          {/* <div className="ml-2 hidden flex-none text-sm font-medium uppercase sm:hidden md:hidden lg:block">
             {process.env.SITE_NAME}
-          </div>
+          </div> */}
         </Link>
 
         {menu.length > 0 ? (
